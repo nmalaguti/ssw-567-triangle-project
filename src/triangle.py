@@ -1,9 +1,16 @@
+#!/usr/bin/python
+
 import sys
 
 def main(t):
     # turn the strings from input to ints
-    for i,j in enumerate(t):
-        t[i] = int(j);
+    try:
+        for i,j in enumerate(t):
+            t[i] = int(j);
+    # catch text inputs
+    except ValueError as e:
+        usage();
+        sys.exit(1);
     # make sure it's a triangle
     if isNotTriangle(t):
         print("Invalid Triangle");
@@ -38,6 +45,9 @@ def isRight(t):
     return(t[0]**2 + t[1]**2 == t[2]**2
            or t[1]**2 + t[2]**2 == t[0]**2
            or t[2]**2 + t[0]**2 == t[1]**2);
+           
+def usage():
+    print("./triangle.py a b c","a, b, and c must be integers");
     
 if __name__ == "__main__":
     main(sys.argv[1:]);

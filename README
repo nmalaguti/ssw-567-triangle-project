@@ -1,1 +1,4 @@
 Python 3.0 required.
+
+syntax: ./triangle.py a b c
+a, b, c must be integers.
