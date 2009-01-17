@@ -1,4 +1,0 @@
-Each team member needs to write a program that accepts three numbers,
-a, b, and c, interprets those numbers as the lengths of the sides of
-a triangle, and outputs the type of triangle. (Equilateral, Isosceles,
-Scalene, Right).
