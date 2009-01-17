@@ -47,7 +47,7 @@ def isRight(t):
            or t[2]**2 + t[0]**2 == t[1]**2);
            
 def usage():
-    print("./triangle.py a b c","a, b, and c must be integers");
+    print("usage: ./triangle.py a b c\na, b, and c must be integers");
     
 if __name__ == "__main__":
     main(sys.argv[1:]);
