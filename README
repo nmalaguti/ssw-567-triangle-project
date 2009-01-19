@@ -1,4 +1,6 @@
 Python 3.0 required.
 
 syntax: ./triangle.py a b c
-a, b, c must be integers.
+a, b, c must be integers
+
+triangletest.py are the unit tests.
