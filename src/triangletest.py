@@ -8,6 +8,7 @@ import math
 class TestInvalidTriangles(unittest.TestCase):
     def testZero(self):
         """isNotTriangle should return True with zero inputs [bcaa54a165bb7858]"""
+        # triangles can't have sides of length zero
         
         random.seed();
         
@@ -40,6 +41,7 @@ class TestInvalidTriangles(unittest.TestCase):
     
     def testNegative(self):
         """isNotTriangle should return True with negative inputs [f8868f9890e547f0]"""
+        # triangles can't have sides of negative length
             
         t = [-5, 5, 5];
         result = triangle.isNotTriangle(t);
@@ -47,6 +49,8 @@ class TestInvalidTriangles(unittest.TestCase):
         
     def testImpossible(self):
         """isNotTriangle should return True with impossible triangles [08ad593071aa995d]"""
+        # the length two of the sides of the triangle must be greater than the third side
+        # otherwise it is impossible to connect the three sides
         
         t = [3, 6, 9];
         result = triangle.isNotTriangle(t);
@@ -63,6 +67,7 @@ class TestInvalidTriangles(unittest.TestCase):
 class Equilateral(unittest.TestCase):
     def testEqual(self):
         """isEquilateral should return True with equal values [f769dfadbe9d3afd]"""
+        # equilateral triangles have three sides of equal length
         
         random.seed();
         
@@ -99,7 +104,8 @@ class Equilateral(unittest.TestCase):
 class Scalene(unittest.TestCase):
     def testScalene(self):
         """isScalene should return True with scalene triangles [bc8859b03e2bc0fa]"""
-        # this is a bad test
+        # this is a relevant test, but it does not adequately test the function
+        # there are many more possible combinations of inputs
         
         random.seed();
         
@@ -114,7 +120,7 @@ class Scalene(unittest.TestCase):
     
     def testNotScalene(self):
         """isScalene should return False with not scalene triangles [2e79614fb2af8162]"""
-        # another bad test
+        # another relevant test, but it suffers from the same problem as testScalene
         
         random.seed();
         
@@ -137,7 +143,7 @@ class Scalene(unittest.TestCase):
 class Isosceles(unittest.TestCase):
     def testIsosceles(self):
         """isIsoscles should return True with isosceles triangles [816d8bb3fdd27f88]"""
-        # probably a poor test
+        # This is another limited test
         
         random.seed();
         
@@ -152,7 +158,7 @@ class Isosceles(unittest.TestCase):
         
     def testNotIsosceles(self):
         """isIsosceles should return False with not isosceles triangles [6bcd95296db8bd5c]"""
-        # this is likely another poor test
+        # this piggy backs off some code from testScalene, and is therefore incomplete
         
         for i in range(10):
             j = random.randint(2,10);
